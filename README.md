@@ -22,6 +22,7 @@ The new system calls implemented in this perspective include:
  getgroupinfo: system call to retrieve available group information.
 
 3. Design Considerations
+
 msend, mreceive
 
 The multicast group IPC implementation provisions receiver consistent message passing between sender and a group of receivers i.e; all the receivers receive the messages in the same order. No two processes in the same group receive the messages from a common sender in a different order. The send system call is non-blocking while the receive system is blocking to enable a concurrent asynchronous data transfer without delay. This also avoids system buffering and allows computations and communication to overlap, which generally leads to improved performance.
